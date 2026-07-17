@@ -206,7 +206,7 @@ nav a:hover {
 
 /* ================= HERO SECTION (HOME) ================= */
 .hero {
-    background-image: url('/images/piscina.jpeg');
+    background-image: url('../images/piscina.jpeg');
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
