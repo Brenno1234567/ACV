@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristo é Vida - Acampamento</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Fonte Google Fonts para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-creme">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
+                <span class="logo-text">Cristo é Vida</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/pages/sobre.html">Sobre Nós</a></li>
+                    <li><a href="/pages/quem-somos.html">Quem somos</a></li>
+                    <li><a href="/pages/galeria.html" class="active">Galeria</a></li>
+                    <li><a href="/pages/temporadas.html">Temporadas</a></li>
+                    <li><a href="/pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="btn-inscrever">Inscrever-se</button>
+        </div>
+    </header>
+
+    <!-- ================= INTRODUÇÃO ================= -->
+    <main class="galeria-main">
+        <section class="galeria-intro">
+            <h1>Nossa Estrutura</h1>
+            <p>
+                Explore os espaços onde grandes aventuras acontecem. De quadras esportivas a refúgios na natureza, cada canto foi pensado para momentos inesquecíveis.
+            </p>
+        </section>
+
+        <!-- ================= BOTÕES DE FILTRO (JS INTERATIVO) ================= -->
+        <section class="galeria-filtros">
+            <button class="btn-filtro active" data-filter="todos">Todos</button>
+            <button class="btn-filtro" data-filter="complexo-aquatico">Área molhada</button>
+            <button class="btn-filtro" data-filter="esportes">Esportes</button>
+            <button class="btn-filtro" data-filter="acomodacoes">Acomodações</button>
+            <button class="btn-filtro" data-filter="natureza">Natureza</button>
+        </section>
+
+        <!-- ================= GRID DA GALERIA ================= -->
+        <section class="galeria-grid">
+            
+            <!-- Card 1: Esportes e Lazer (Grande / Destaque) -->
+            <div class="galeria-card card-grande" data-category="esportes">
+                <img src="images/integração.jpg" alt="Competição e Alegria" class="card-img">
+                <div class="card-overlay">
+                    <span class="tag-categoria tag-esportes">Esportes</span>
+                    <h3>Competição e Alegria</h3>
+                    <p>campos amplos para garantir a diversão e o espírito de equipe durante todo o acampamento.</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Natureza -->
+            <div class="galeria-card" data-category="natureza">
+                <img src="images/verde.jpg" alt="Contato Verde" class="card-img">
+                <div class="card-overlay">
+                    <span class="tag-categoria tag-natureza">Natureza</span>
+                    <h3>Lazer e amizade</h3>
+                </div>
+            </div>
+
+            <!-- Card 3: Atividades / Lazer -->
+            <div class="galeria-card" data-category="esportes">
+                <img src="images/atividades.jpg" alt="Integração Total" class="card-img">
+                <div class="card-overlay">
+                    <span class="tag-categoria tag-atividades">Atividades</span>
+                    <h3>Integração Total</h3>
+                </div>
+            </div>
+
+            <!-- Card 4: Complexo Aquático (Largo) -->
+            <div class="galeria-card card-largo" data-category="complexo-aquatico">
+                <img src="images/piscina.jpeg" alt="Diversão Refrescante" class="card-img">
+                <div class="card-overlay">
+                    <span class="tag-categoria tag-aquatico">Area molhada</span>
+                    <h3>Diversão Refrescante</h3>
+                </div>
+            </div>
+
+            <!-- Card 5: Acomodações -->
+            <div class="galeria-card" data-category="acomodacoes">
+                <img src="images/alojamento.jpg" alt="Descanso Rústico" class="card-img">
+                <div class="card-overlay">
+                    <span class="tag-categoria tag-acomodacao">Acomodações</span>
+                    <h3>Dormitorios aconchegantes</h3>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= BANNER DE RESERVA (CTA) ================= -->
+        <section class="cta-reserva">
+            <div class="cta-conteudo">
+                <h2>Venha viver essa experiência!</h2>
+                <p>Nossa estrutura está pronta para receber seu grupo. Faça sua reserva para a próxima temporada de acampamentos.</p>
+            </div>
+            <button class="btn-reservar">RESERVAR AGORA</button>
+        </section>
+    </main>
+            <div id="preview-modal" class="modal-preview">
+                <span class="modal-close" id="modal-close-btn">&times;</span>
+                <div class="modal-wrapper" id="modal-wrapper">
+                    <img class="modal-conteudo" id="img-preview" alt="Visualização em Alta Definição">
+                </div>
+            </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Acampamento Cristo é Vida</h3>
+                <p>&copy; 2026 Acampamento Cristo é Vida. Aventuras que duram para sempre.</p>
+            </div>
+            <div class="footer-right">
+                <div class="contact-info">
+                    <p><strong>Contato:</strong> (14) 99790-1509</p>
+                    <p><strong>Email:</strong> acampamentocristoevida@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/pages/termos.html">Privacidade</a>
+                    <a href="/pages/termos.html">Termos de Uso</a>
+                    <a href="/pages/faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPT PARA FILTRAR FOTOS DINAMICAMENTE ================= -->
+<script>
+    // ================= 1. SISTEMA DE FILTROS DA GALERIA =================
+    // Declaramos as variáveis uma única vez aqui no topo!
+    const botoesFiltro = document.querySelectorAll('.btn-filtro');
+    const cardsGaleria = document.querySelectorAll('.galeria-card');
+
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', () => {
+            botoesFiltro.forEach(b => b.classList.remove('active'));
+            botao.classList.add('active');
+
+            const categoriaSelecionada = botao.getAttribute('data-filter');
+
+            cardsGaleria.forEach(card => {
+                const categoriaCard = card.getAttribute('data-category');
+
+                if (categoriaSelecionada === 'todos' || categoriaCard === categoriaSelecionada) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ================= 2. JAVASCRIPT DO PREVIEW DA IMAGEM =================
+    const modal = document.getElementById('preview-modal');
+    const imgModal = document.getElementById('img-preview');
+    const modalWrapper = document.getElementById('modal-wrapper');
+    const botaoFechar = document.getElementById('modal-close-btn');
+    
+    // REMOVIDO: "const cardsGaleria = ..." daqui para não dar erro de redeclaração!
+
+    // Abre o modal ao clicar em qualquer card da galeria
+    cardsGaleria.forEach(card => {
+        card.addEventListener('click', () => {
+            const img = card.querySelector('.card-img');
+            if (img) {
+                modal.style.display = "block";
+                imgModal.src = img.src; // Pega a URL original da imagem
+                document.body.style.overflow = "hidden"; // Trava o scroll do fundo
+            }
+        });
+    });
+
+    // Função para fechar o Modal e liberar o site
+    function fecharModal() {
+        modal.style.display = "none";
+        imgModal.src = ""; // Limpa o src para liberar memória do navegador
+        document.body.style.overflow = "auto"; // Libera o scroll
+    }
+
+    // Fecha ao clicar no X
+    botaoFechar.addEventListener('click', fecharModal);
+
+    // Fecha ao clicar fora da imagem (na área escura)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === modalWrapper) {
+            fecharModal();
+        }
+    });
+
+    // Permite fechar pressionando a tecla ESC no teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            fecharModal();
+        }
+    });
+</script>
+</body>
+</html>

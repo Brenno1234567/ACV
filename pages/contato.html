@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristo é Vida - Acampamento</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Fonte Google Fonts para um visual moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- CABEÇALHO (HEADER) -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
+                <span class="logo-text">Cristo é Vida</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/pages/sobre.html">Sobre Nós</a></li>
+                    <li><a href="/pages/quem-somos.html">Quem somos</a></li>
+                    <li><a href="/pages/galeria.html">Galeria</a></li>
+                    <li><a href="/pages/temporadas.html">Temporadas</a></li>
+                    <li><a href="/pages/contato.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="btn-inscrever">Inscrever-se</button>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- INTRODUÇÃO -->
+        <section class="intro-section">
+            <h1>Fale Conosco</h1>
+            <p>Estamos prontos para responder suas dúvidas e ajudar a planejar a próxima grande aventura do seu filho!</p>
+        </section>
+
+        <!-- GRID DE DOIS LADOS -->
+        <div class="contact-grid">
+            
+            <!-- FORMULÁRIO (ESQUERDA) -->
+            <section class="neo-card form-card">
+                <h2>Envie uma Mensagem</h2>
+                
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensagem simulada com sucesso!');">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" placeholder="seunome@exemplo.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="text" id="telefone" placeholder="(14) 99790-1509" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" required>
+                            <option value="temporada">Temporada de verão</option>
+                            <option value="temporada">Temporada de inverno</option>
+                            <option value="duvidas">Dúvidas Gerais</option>
+                            <option value="outros">Outros Assuntos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="neo-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                <!-- Campo de consentimento obrigatório -->
+                <div class="form-group" style="margin-top: 15px; font-size: 0.85rem;">
+                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" name="aceite_termos" required style="margin-top: 4px;">
+                        <span>
+                            Li e concordo com a 
+                            <a href="/pages/termos.html" target="_blank" style="color: #0f6d5f; font-weight: 700;">Política de Privacidade e Termos de Uso</a>.
+                        </span>
+                    </label>
+                </div>
+                </form>
+            </section>
+
+            <!-- CONTATOS E MAPA (DIREITA) -->
+            <aside class="info-sidebar">
+                
+                <!-- Card Amarelo de Contatos -->
+                <div class="neo-card direct-contacts-card">
+                    <h2>Contatos Diretos</h2>
+                    
+                    <!-- Sub-card WhatsApp -->
+                    <div class="whatsapp-subcard">
+                        <div class="whatsapp-icon-box">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="whatsapp-details">
+                            <span>WhatsApp</span>
+                            <strong>(14) 99790-1509</strong>
+                        </div>
+                    </div>
+
+                    <!-- Item Localização -->
+                    <div class="contact-item">
+                        <div class="contact-item-title">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Localização
+                        </div>
+                        <p>Acampamento Cristo é Vida, Arandu - SP, 18710-000</p>
+                    </div>
+
+                    <!-- Item E-mail -->
+                    <div class="contact-item">
+                        <div class="contact-item-title">
+                            <i class="fa-solid fa-envelope"></i>
+                            E-mail
+                        </div>
+                        <p>acampamentocristoevida@gmail.com</p>
+                    </div>
+                </div>
+
+
+
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Acampamento Cristo é Vida</h3>
+                <p>&copy; 2026 Acampamento Cristo é Vida. Aventuras que duram para sempre.</p>
+            </div>
+            <div class="footer-right">
+                <div class="contact-info">
+                    <p><strong>Contato:</strong> (14) 99790-1509</p>
+                    <p><strong>Email:</strong> acampamentocristoevida@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/pages/termos.html">Privacidade</a>
+                    <a href="/pages/termos.html">Termos de Uso</a>
+                    <a href="/pages/faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
