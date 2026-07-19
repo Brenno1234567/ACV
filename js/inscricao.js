@@ -40,3 +40,21 @@ document.getElementById('formInscricao').addEventListener('submit', async (e) =>
     document.getElementById('statusMensagem').innerText = result.mensagem;
     btn.innerText = "Enviar Inscrição";
 });
+
+
+    // ================= 2. LÓGICA DO SUBMENU "QUEM SOMOS" =================
+    const btnQuemSomos = document.getElementById('btnQuemSomos');
+    const submenuQuemSomos = document.getElementById('submenuQuemSomos');
+
+    if (btnQuemSomos && submenuQuemSomos) {
+        btnQuemSomos.addEventListener('click', function(e) {
+            e.preventDefault();
+            submenuQuemSomos.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!btnQuemSomos.contains(e.target) && !submenuQuemSomos.contains(e.target)) {
+                submenuQuemSomos.classList.remove('show');
+            }
+        });
+    }
