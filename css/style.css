@@ -1535,6 +1535,9 @@ label {
 /* CORRIGIDO: Forçando os campos de input do design principal a ficarem consistentes */
 input[type="text"],
 input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
 select,
 textarea {
     width: 100%;
@@ -2258,4 +2261,104 @@ select {
     align-items: flex-start; 
     gap: 10px; 
     font-size: 0.9em; 
+}
+
+/* ================= PÁGINA DE INSCRIÇÃO ================= */
+
+/* Centraliza e estiliza os títulos no topo do formulário */
+.container > h1:first-of-type {
+    text-align: center;
+    color: var(--teal-primary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.container > p:first-of-type {
+    text-align: center;
+    color: #776655;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Transforma o formulário em um card centralizado estilo neo-brutalista */
+#formInscricao {
+    background-color: var(--white);
+    padding: 40px;
+    border: var(--border-style);
+    box-shadow: var(--shadow-style);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre as caixas de input */
+    max-width: 600px; /* Impede que o formulário fique gigante no desktop */
+    margin: 0 auto 50px auto;
+}
+
+/* Ajuste dos termos de aceite (Checkboxes) */
+#formInscricao .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #FAF6F0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px dashed var(--dark-brown);
+    margin-top: 10px;
+}
+
+#formInscricao .checkbox-group input[type="checkbox"] {
+    margin-top: 2px;
+    width: 22px;
+    height: 22px;
+    accent-color: var(--teal-primary);
+    cursor: pointer;
+    flex-shrink: 0; /* Evita que a caixa esmague em telas pequenas */
+}
+
+#formInscricao .checkbox-group label {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    text-transform: none; /* Remove o uppercase para facilitar a leitura */
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+/* Botão de Envio (Estilo Neo-brutalista Amarelo) */
+#formInscricao button[type="submit"] {
+    background-color: var(--yellow-main);
+    color: var(--brown-dark);
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--brown-dark);
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--dark-brown);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+#formInscricao button[type="submit"]:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--dark-brown);
+}
+
+/* Div de status/mensagens de erro do JS */
+#statusMensagem {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+}
+
+/* Responsividade específica para o formulário */
+@media (max-width: 768px) {
+    #formInscricao {
+        padding: 25px;
+    }
 }
