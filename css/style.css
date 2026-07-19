@@ -2379,3 +2379,32 @@ select {
   direction: ltr;
   -webkit-font-smoothing: antialiased;
 }
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h1 { text-align: center; color: #f59e0b; }
+form { display: flex; flex-direction: column; gap: 15px; }
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2a2a2a;
+    color: white;
+}
+button {
+    padding: 15px;
+    background: #f59e0b;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.checkbox-group { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9em; }
