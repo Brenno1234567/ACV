@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
+                <span class="logo-text">Cristo é Vida</span>
+            </div>
+            
+            <!-- Menu Desktop (Escondido no mobile) -->
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="pages/sobre.html">Sobre Nós</a></li>
+                    <li><a href="pages/quem-somos.html">Quem somos</a></li>
+                    <li><a href="pages/galeria.html">Galeria</a></li>
+                    <li><a href="pages/temporadas.html">Temporadas</a></li>
+                    <li><a href="pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <a href="pages/inscricao.html" class="btn-inscrever">Inscreva-se</a>   
+        </div>
+    </header>
+
     <div class="container">
         <h1>ACV TEENS - INVERNO'26</h1>
         <p>Ficha de Inscrição</p>
@@ -63,6 +88,39 @@
         </form>
         <div id="statusMensagem"></div>
     </div>
+
+        <nav class="mobile-bottom-nav">
+            <!-- Links fixos principais -->
+            <a href="index.html" class="nav-item active">
+                <span class="material-symbols-outlined">home</span>
+                <span class="nav-label">Início</span>
+            </a>
+            
+            <a href="pages/galeria.html" class="nav-item">
+                <span class="material-symbols-outlined">photo_library</span>
+                <span class="nav-label">Galeria</span>
+            </a>
+            
+            <a href="pages/temporadas.html" class="nav-item">
+                <span class="material-symbols-outlined">event</span>
+                <span class="nav-label">Temporadas</span>
+            </a>
+            
+            <!-- ITEM COM SUBMENU (Agora com Sobre, Quem Somos e Contato) -->
+            <div class="nav-item-has-menu">
+                <a href="#" class="nav-item" id="btnQuemSomos">
+                    <span class="material-symbols-outlined">groups</span>
+                    <span class="nav-label">Info</span> <!-- Mudei o label para "Info" ou "Mais" para caber melhor -->
+                </a>
+                
+                <!-- Balão que aparece em cima -->
+                <div class="nav-submenu" id="submenuQuemSomos">
+                    <a href="pages/sobre.html">Sobre Nós</a>
+                    <a href="pages/quem-somos.html">Quem Somos</a>
+                    <a href="pages/contato.html">Contato</a> <!-- Novo link aqui dentro -->
+                </div>
+            </div>
+        </nav>
     <script src="../js/inscricao.js"></script>
 </body>
 </html>

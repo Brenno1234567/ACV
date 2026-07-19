@@ -721,8 +721,6 @@ nav a:hover {
     display: block;
 }
 
-
-
 .lideranca-text h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -1526,6 +1524,7 @@ nav a:hover {
 
 label {
     display: block;
+    color: var(--dark-brown); /* CORRIGIDO: Era branco e não dava para ler */
     font-size: 0.85rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -1533,6 +1532,7 @@ label {
     letter-spacing: 0.5px;
 }
 
+/* CORRIGIDO: Forçando os campos de input do design principal a ficarem consistentes */
 input[type="text"],
 input[type="email"],
 select,
@@ -1541,8 +1541,8 @@ textarea {
     padding: 14px;
     border: 2px solid var(--dark-brown);
     border-radius: 8px;
-    background-color: #FAF6F0;
-    color: var(--dark-brown);
+    background-color: #ffffff; /* Fundo sempre branco */
+    color: #000000; /* Texto sempre preto */
     font-size: 0.95rem;
     font-weight: 500;
     outline: none;
@@ -1558,7 +1558,6 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-    background-color: var(--white);
     box-shadow: 3px 3px 0px var(--dark-brown);
     transform: translate(-2px, -2px);
 }
@@ -1955,186 +1954,32 @@ select {
     color: var(--yellow-main);
     margin-top: 15px;
 }
+
+/* ================= NAVEGAÇÃO MOBILE INFERIOR ================= */
+.mobile-bottom-nav {
+    display: none; /* Escondido por padrão, aparece apenas no mobile */
+}
+
 /* ================= RESPONSIVIDADE GERAL & MOBILE ================= */
 
-/* Regras exclusivas para telas menores (Celulares e Tablets) */
+/* CORRIGIDO: Removidas as media queries duplicadas e centralizadas em um único bloco */
 @media (max-width: 768px) {
     
-    /* 1. BLINDAGEM DO HEADER: Força o menu do PC a não existir no celular de jeito nenhum */
     .desktop-menu, 
     .menu, 
     .site-header nav {
         display: none !important;
     }
     
-    /* Evita que o botão "Inscrever-se" ou a logo estiquem a barra do topo */
     .header-container {
         display: flex !important;
         justify-content: space-between !important;
-        width: 100% !important;
-    }
-
-    /* Estilização da barra mobile no celular */
-    .mobile-bottom-nav {
-        display: flex !important;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 65px;
-        background-color: #2D1E10;
-        justify-content: center; /* Centraliza o grupo todo no meio */
-        gap: 30px;               /* Define a distância EXATA entre os botões */
-        align-items: center;
-        z-index: 999;
-        border-top: 2px solid #FFB84D;
-    }
-
-    .btn-inscrever {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-
-    /* 2. Prevenção de estouro de tela (Faixa Branca) */
-    html, body {
-        overflow-x: hidden;
-        width: 100vw;
-        padding-bottom: 30px;
-    }
-
-    /* 3. Hero Section (Início) */
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-        padding-top: 20px;
-    }
-
-    .hero-card {
-        margin-left: 0;
-        padding: 25px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .hero-image-wrapper, .card-img-holder, .card-footer-tag {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-
-    /* 4. Transformação de Grids (De Lado a Lado para Empilhado) */
-    .grid-pilares, 
-    .temporadas-grid, 
-    .lideranca-grid, 
-    .container-grid, 
-    .grid-meio-a-meio, 
-    .sub-cards-grid, 
-    .gigantes-grid,
-    .cards-investimento, 
-    .grid-quem-somos,
-    .contact-grid, 
-    .form-row,
-    .icons-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* 5. Ajustes Específicos de Cards */
-    .pilar-card {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .pilar-card img {
-        width: 100%;
-        height: 180px;
-        border-right: none;
-        border-bottom: 2px solid var(--dark-brown);
-    }
-
-    .pilar-info {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .card-identidade {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* 6. Galeria */
-    .galeria-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .galeria-card, 
-    .galeria-card.card-grande, 
-    .galeria-card.card-largo {
-        width: 100%;
-        height: 300px;
-    }
-
-    /* 7. CTA Reserva e Localização */
-    .cta-reserva {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .localizacao-container {
-        flex-direction: column;
-    }
-
-    .map-wrapper {
-        width: 100%;
-        height: 300px;
-    }
-
-    /* 8. Footer */
-    .footer-container, .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .footer-right {
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-/* Regras exclusivas para Desktop (Computador) */
-/* ================= RESPONSIVIDADE GERAL & MOBILE ================= */
-
-@media (max-width: 768px) {
-    
-    .desktop-menu, 
-    .menu, 
-    .site-header nav {
-        display: none !important;
-    }
-    
-    .header-container {
-        display: flex !important;
-        justify-content: center !important;
         align-items: center !important;
         gap: 20px !important;
         width: 100% !important;
     }
 
+    /* Menu Inferior Fixo Mobile */
     .mobile-bottom-nav {
         display: flex !important;
         position: fixed;
@@ -2273,27 +2118,12 @@ select {
     .desktop-menu {
         display: block;
     }
-
     .mobile-bottom-nav {
         display: none !important;
     }
 }
 
-.mobile-bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background-color: #2D1E10;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-    z-index: 999;
-    border-top: 2px solid #FFB84D;
-}
-
+/* ================= COMPONENTES DO MENU MOBILE ================= */
 .nav-item {
     display: flex;
     flex-direction: column;
@@ -2369,7 +2199,7 @@ select {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  font-size: 24px;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -2380,7 +2210,10 @@ select {
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
+/* ================= FORMULÁRIO TEMA ESCURO (ISOLADO) ================= */
+/* CORRIGIDO: Mudei o nome de .container para .form-dark-container para não quebrar o layout do site.
+   Também isolei as tags h1, form, input para que elas afetem apenas essa caixa preta. */
+.form-dark-container {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
@@ -2390,38 +2223,39 @@ select {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-h1 { text-align: center; color: #f59e0b; }
-form { display: flex; flex-direction: column; gap: 15px; }
-input, select {
+.form-dark-container h1 { 
+    text-align: center; 
+    color: #f59e0b; 
+}
+
+.form-dark-container form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.form-dark-container input, 
+.form-dark-container select {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #444;
     background: #2a2a2a;
     color: white;
 }
-button {
+
+.form-dark-container button {
     padding: 15px;
     background: #f59e0b;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-}
-.checkbox-group { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9em; }
-
-/* Isso força todos os campos de formulário a terem fundo branco e letras pretas */
-input, select, textarea {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px; /* Deixa a borda levemente arredondada */
-    width: 100%;        /* Garante que o campo ocupe o espaço certo */
+    color: #1a1a1a;
 }
 
-/* Isso ajusta as labels (os textos acima dos campos) para continuarem brancas */
-label {
-    color: #ffffff !important;
-    display: block;
-    margin-bottom: 5px;
+.form-dark-container .checkbox-group { 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 10px; 
+    font-size: 0.9em; 
 }
