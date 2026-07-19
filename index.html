@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristo é Vida - Acampamento</title>
+    <!-- Adicionado link dos ícones que estava faltando -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
 
     <!-- ================= HEADER ================= -->
     <header class="site-header">
@@ -18,7 +20,9 @@
                 <img src="images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
                 <span class="logo-text">Cristo é Vida</span>
             </div>
-            <nav class="menu">
+            
+            <!-- Menu Desktop (Escondido no mobile) -->
+            <nav class="desktop-menu">
                 <ul>
                     <li><a href="index.html" class="active">Início</a></li>
                     <li><a href="pages/sobre.html">Sobre Nós</a></li>
@@ -28,6 +32,7 @@
                     <li><a href="pages/contato.html">Contato</a></li>
                 </ul>
             </nav>
+            
             <button class="btn-inscrever">Inscrever-se</button>
         </div>
     </header>
@@ -163,12 +168,11 @@
                 </li>
             </ul>
 
-            <button class="btn-equipe">Conheça a Equipe</button>
+            <a href="pages/sobre.html" class="btn-equipe">Conheça a Equipe</a>
         </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="site-footer">
+<footer class="site-footer">
         <div class="footer-container">
             <div class="footer-left">
                 <h3>Acampamento Cristo é Vida</h3>
@@ -187,6 +191,40 @@
             </div>
         </div>
     </footer>
+
+<nav class="mobile-bottom-nav">
+    <!-- Links fixos principais -->
+    <a href="index.html" class="nav-item active">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Início</span>
+    </a>
+    
+    <a href="pages/galeria.html" class="nav-item">
+        <span class="material-symbols-outlined">photo_library</span>
+        <span class="nav-label">Galeria</span>
+    </a>
+    
+    <a href="pages/temporadas.html" class="nav-item">
+        <span class="material-symbols-outlined">event</span>
+        <span class="nav-label">Temporadas</span>
+    </a>
+    
+    <!-- ITEM COM SUBMENU (Agora com Sobre, Quem Somos e Contato) -->
+    <div class="nav-item-has-menu">
+        <a href="#" class="nav-item" id="btnQuemSomos">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="nav-label">Info</span> <!-- Mudei o label para "Info" ou "Mais" para caber melhor -->
+        </a>
+        
+        <!-- Balão que aparece em cima -->
+        <div class="nav-submenu" id="submenuQuemSomos">
+            <a href="pages/sobre.html">Sobre Nós</a>
+            <a href="pages/quem-somos.html">Quem Somos</a>
+            <a href="pages/contato.html">Contato</a> <!-- Novo link aqui dentro -->
+        </div>
+    </div>
+</nav>
+
 <script src="js/script.js"></script>
 </body>
 </html>

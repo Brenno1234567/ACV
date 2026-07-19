@@ -8,18 +8,21 @@
     <!-- Fonte Google Fonts para um visual moderno -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- ================= HEADER ================= -->
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
                 <img src="../images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
                 <span class="logo-text">Cristo é Vida</span>
             </div>
-            <nav class="menu">
+            
+            <!-- Menu Desktop (Escondido no mobile) -->
+            <nav class="desktop-menu">
                 <ul>
                     <li><a href="../index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
@@ -29,6 +32,7 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+            
             <button class="btn-inscrever">Inscrever-se</button>
         </div>
     </header>
@@ -60,7 +64,7 @@
                         <i class="fa-solid fa-user-group"></i>
                         <span class="vagas-tag">100 VAGAS</span>
                     </div>
-                    <h3>Adolescentes</h3>
+                    <h3>Teens</h3>
                     <p>Uma jornada de 7 dias intensos para jovens que buscam propósito e diversão radical.</p>
                     <div class="card-info">
                         <i class="fa-regular fa-calendar"></i>
@@ -77,11 +81,27 @@
                         <i class="fa-solid fa-face-smile"></i>
                         <span class="vagas-tag">60 VAGAS</span>
                     </div>
-                    <h3>Crianças</h3>
+                    <h3>Kids</h3>
                     <p>4 dias de descobertas e segurança para os pequenos exploradores.</p>
                     <div class="card-info">
                         <i class="fa-regular fa-calendar"></i>
                         <span>7 a 11 anos • 4 dias de duração</span>
+                    </div>
+                </div>
+                <a href="#" class="neo-btn btn-card" style="background: var(--brown-dark); color: var(--white);">Saiba Mais</a>
+            </div>
+
+            <div class="neo-box card-temp card-kids">
+                <div>
+                    <div class="card-temp-header">
+                        <i class="fa-solid fa-face-smile"></i>
+                        <span class="vagas-tag">X VAGAS,sem informações pra isso.</span>
+                    </div>
+                    <h3>Young</h3>
+                    <p>Não sei quantos dias são, preciso dessa informação.</p>
+                    <div class="card-info">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span>18 a X anos • 3 dias de duração creio eu.</span>
                     </div>
                 </div>
                 <a href="#" class="neo-btn btn-card" style="background: var(--brown-dark); color: var(--white);">Saiba Mais</a>
@@ -113,7 +133,7 @@
                 </div>
                 <div class="icon-item">
                     <i class="fa-solid fa-water"></i>
-                    <span>Atividades na Represa</span>
+                    <span>Atividades incriveis</span>
                 </div>
                 <div class="icon-item">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -137,9 +157,13 @@
             <div class="lideranca-img-wrapper">
                 <!-- Imagem ilustrativa usando o Unsplash para mockup -->
                 <img src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?q=80&w=800&auto=format&fit=crop" alt="Equipe de Liderança" class="lideranca-img">
-                <div class="neo-box tag-equipe">
-                    Equipe<br>Experiente
+
+
+                <div class="tag-equip">
+                    <!-- ignorar  -->
                 </div>
+
+
             </div>
             <div class="lideranca-text">
                 <h2>Liderança & Cuidado</h2>
@@ -177,7 +201,7 @@
                 </div>
             </div>
 
-            <a href="#" class="neo-btn btn-orcamento">SOLICITAR ORÇAMENTO E RESERVAR VAGA</a>
+            <a href="#" class="neo-btn btn-orcamento">Solicitar inscrição</a>
             <div class="limite-vagas">Vagas limitadas: 100 teens / 60 kids</div>
         </div>
     </section>
@@ -202,6 +226,41 @@
             </div>
         </div>
     </footer>
+
+<nav class="mobile-bottom-nav">
+    <!-- Links fixos principais -->
+    <a href="../index.html" class="nav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Início</span>
+    </a>
+    
+    <a href="galeria.html" class="nav-item">
+        <span class="material-symbols-outlined">photo_library</span>
+        <span class="nav-label">Galeria</span>
+    </a>
+    
+    <a href="temporadas.html" class="nav-item active" class="nav-item">
+        <span class="material-symbols-outlined">event</span>
+        <span class="nav-label">Temporadas</span>
+    </a>
+    
+    <!-- ITEM COM SUBMENU (Agora com Sobre, Quem Somos e Contato) -->
+    <div class="nav-item-has-menu">
+        <a href="#" class="nav-item" id="btnQuemSomos">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="nav-label">Info</span> <!-- Mudei o label para "Info" ou "Mais" para caber melhor -->
+        </a>
+        
+        <!-- Balão que aparece em cima -->
+        <div class="nav-submenu" id="submenuQuemSomos">
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="contato.html">Contato</a> <!-- Novo link aqui dentro -->
+        </div>
+    </div>
+</nav>
+
+<script src="../js/script.js"></script>
 
 </body>
 </html>

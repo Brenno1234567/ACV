@@ -721,20 +721,7 @@ nav a:hover {
     display: block;
 }
 
-.tag-equipe {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: var(--yellow-main);
-    color: var(--dark-brown);
-    padding: 15px 20px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-align: center;
-    line-height: 1.2;
-    border: 2px solid var(--dark-brown);
-    border-radius: 8px;
-}
+
 
 .lideranca-text h2 {
     font-size: 2rem;
@@ -1968,213 +1955,427 @@ select {
     color: var(--yellow-main);
     margin-top: 15px;
 }
+/* ================= RESPONSIVIDADE GERAL & MOBILE ================= */
 
-/* ================= RESPONSIVIDADE GERAL ================= */
-@media (max-width: 992px) {
-    .galeria-card.card-grande,
-    .galeria-card.card-largo {
-        grid-column: span 12;
-        height: 400px;
+/* Regras exclusivas para telas menores (Celulares e Tablets) */
+@media (max-width: 768px) {
+    
+    /* 1. BLINDAGEM DO HEADER: Força o menu do PC a não existir no celular de jeito nenhum */
+    .desktop-menu, 
+    .menu, 
+    .site-header nav {
+        display: none !important;
     }
     
-    .galeria-card {
-        grid-column: span 6;
+    /* Evita que o botão "Inscrever-se" ou a logo estiquem a barra do topo */
+    .header-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
     }
 
-    .cta-reserva {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    
-    .btn-reservar {
+    /* Estilização da barra mobile no celular */
+    .mobile-bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
+        height: 65px;
+        background-color: #2D1E10;
+        justify-content: center; /* Centraliza o grupo todo no meio */
+        gap: 30px;               /* Define a distância EXATA entre os botões */
+        align-items: center;
+        z-index: 999;
+        border-top: 2px solid #FFB84D;
     }
 
-    .temporadas-grid,
-    .lideranca-grid,
-    .cards-investimento {
-        grid-template-columns: 1fr;
-    }
-    
-    .icons-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero-card {
-        margin: 0 auto;
-    }
-    
-    .footer-container, .footer-content {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-    
-    .footer-right {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .footer-links {
-        justify-content: center;
-    }
-    
-    .footer-phone {
-        justify-content: center;
+    .btn-inscrever {
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
 
-    nav {
-        display: none; /* Aqui entraria o menu hamburguer */
+    /* 2. Prevenção de estouro de tela (Faixa Branca) */
+    html, body {
+        overflow-x: hidden;
+        width: 100vw;
+        padding-bottom: 30px;
     }
-}
 
-@media (max-width: 900px) {
-    .header-container, .header-content {
-        flex-direction: column !important;
-        gap: 15px !important;
-        text-align: center !important;
-    }
-    
-    .menu ul, nav ul {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 15px;
-    }
-    
+    /* 3. Hero Section (Início) */
     .hero-container {
         grid-template-columns: 1fr;
+        text-align: center;
         gap: 40px;
+        padding-top: 20px;
     }
-    
-    .grid-pilares {
-        grid-template-columns: 1fr;
+
+    .hero-card {
+        margin-left: 0;
+        padding: 25px;
+        width: 100%;
+        max-width: 100%;
     }
-    
-    .pilar-card {
-        height: auto;
+
+    .hero-buttons {
         flex-direction: column;
+        justify-content: center;
     }
-    
+
+    .hero-image-wrapper, .card-img-holder, .card-footer-tag {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    /* 4. Transformação de Grids (De Lado a Lado para Empilhado) */
+    .grid-pilares, 
+    .temporadas-grid, 
+    .lideranca-grid, 
+    .container-grid, 
+    .grid-meio-a-meio, 
+    .sub-cards-grid, 
+    .gigantes-grid,
+    .cards-investimento, 
+    .grid-quem-somos,
+    .contact-grid, 
+    .form-row,
+    .icons-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 5. Ajustes Específicos de Cards */
+    .pilar-card {
+        flex-direction: column;
+        height: auto;
+    }
+
     .pilar-card img {
         width: 100%;
         height: 180px;
         border-right: none;
         border-bottom: 2px solid var(--dark-brown);
     }
-    
+
     .pilar-info {
         width: 100%;
+        padding: 15px;
     }
 
-    .container-grid, .grid-meio-a-meio {
-        grid-template-columns: 1fr;
-    }
-    
-    .sobre-hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    .sub-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .card-identidade {
         flex-direction: column;
         text-align: center;
     }
-    
-    .gigantes-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+
+    /* 6. Galeria */
+    .galeria-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .galeria-card, 
+    .galeria-card.card-grande, 
+    .galeria-card.card-largo {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* 7. CTA Reserva e Localização */
+    .cta-reserva {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
     }
 
     .localizacao-container {
         flex-direction: column;
-        gap: 30px;
     }
-    
+
     .map-wrapper {
         width: 100%;
         height: 300px;
     }
 
-    .intro-section h1 {
-        font-size: 2.6rem;
+    /* 8. Footer */
+    .footer-container, .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 25px;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .footer-right {
+        text-align: center;
     }
 
-    .form-card {
-        padding: 25px;
-    }
-    
-    .grid-quem-somos {
-        grid-template-columns: 1fr;
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
-@media (max-width: 600px) {
-    .gigantes-grid {
-        grid-template-columns: 1fr;
+/* Regras exclusivas para Desktop (Computador) */
+/* ================= RESPONSIVIDADE GERAL & MOBILE ================= */
+
+@media (max-width: 768px) {
+    
+    .desktop-menu, 
+    .menu, 
+    .site-header nav {
+        display: none !important;
+    }
+    
+    .header-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
 
-    .galeria-intro h1 {
-        font-size: 2.5rem;
+    .mobile-bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background-color: #2D1E10;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        z-index: 999;
+        border-top: 2px solid #FFB84D;
     }
 
-    .galeria-card {
-        grid-column: span 12;
-    }
-
-    .galeria-filtros {
-        gap: 8px;
-    }
-
-    .btn-filtro {
+    .btn-inscrever {
         padding: 8px 16px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
-    .modal-close {
-        top: 15px;
-        right: 20px;
-        font-size: 40px;
+    html, body {
+        overflow-x: hidden;
+        width: 100vw;
+        padding-bottom: 30px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding-top: 20px;
+    }
+
+    .hero-card {
+        margin-left: 0;
+        padding: 25px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero-buttons {
         flex-direction: column;
+        justify-content: center;
     }
-    
+
+    .hero-image-wrapper, .card-img-holder, .card-footer-tag {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .grid-pilares, 
+    .temporadas-grid, 
+    .lideranca-grid, 
+    .container-grid, 
+    .grid-meio-a-meio, 
+    .sub-cards-grid, 
+    .gigantes-grid,
+    .cards-investimento, 
+    .grid-quem-somos,
+    .contact-grid, 
+    .form-row,
     .icons-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
-    
-    .box-acontece, .box-investimento {
+
+    .pilar-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .pilar-card img {
+        width: 100%;
+        height: 180px;
+        border-right: none;
+        border-bottom: 2px solid var(--dark-brown);
+    }
+
+    .pilar-info {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .card-identidade {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .galeria-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .galeria-card, 
+    .galeria-card.card-grande, 
+    .galeria-card.card-largo {
+        width: 100%;
+        height: 300px;
+    }
+
+    .cta-reserva {
+        flex-direction: column;
+        text-align: center;
         padding: 30px 20px;
     }
-    
-    .tag-equipe {
-        position: relative;
-        bottom: 0;
-        right: 0;
+
+    .localizacao-container {
+        flex-direction: column;
+    }
+
+    .map-wrapper {
         width: 100%;
-        margin-top: -5px;
+        height: 300px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .footer-container, .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 25px;
     }
 
-    .intro-section h1 {
-        font-size: 2.2rem;
+    .footer-right {
+        text-align: center;
     }
 
-    .neo-btn {
-        width: 100%;
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
     }
+}
+
+@media (min-width: 769px) {
+    .desktop-menu {
+        display: block;
+    }
+
+    .mobile-bottom-nav {
+        display: none !important;
+    }
+}
+
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #2D1E10;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    z-index: 999;
+    border-top: 2px solid #FFB84D;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 10px;
+    gap: 2px;
+    padding: 0 5px;
+}
+
+.nav-item.active {
+    color: #FFB84D;
+}
+
+.nav-item-has-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2D1E10;
+    border: 1px solid #FFB84D;
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 130px;
+    text-align: center;
+    box-shadow: 0px -5px 15px rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+.nav-submenu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-submenu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-submenu a:last-child {
+    border-bottom: none;
+}
+
+.nav-submenu a:hover, .nav-submenu a:active {
+    color: #FFB84D;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-submenu::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0;
+    border-style: solid;
+    border-color: #FFB84D transparent transparent transparent;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }

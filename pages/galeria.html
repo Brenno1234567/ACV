@@ -8,6 +8,7 @@
     <!-- Fonte Google Fonts para um visual moderno -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-creme">
@@ -19,7 +20,9 @@
                 <img src="../images/logo.avif" alt="Logo Cristo é Vida" class="logo-img"> 
                 <span class="logo-text">Cristo é Vida</span>
             </div>
-            <nav class="menu">
+            
+            <!-- Menu Desktop (Escondido no mobile) -->
+            <nav class="desktop-menu">
                 <ul>
                     <li><a href="../index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
@@ -29,6 +32,7 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+            
             <button class="btn-inscrever">Inscrever-se</button>
         </div>
     </header>
@@ -38,7 +42,7 @@
         <section class="galeria-intro">
             <h1>Nossa Estrutura</h1>
             <p>
-                Explore os espaços onde grandes aventuras acontecem. De quadras esportivas a refúgios na natureza, cada canto foi pensado para momentos inesquecíveis.
+                Explore os espaços onde as atividades acontecem.
             </p>
         </section>
 
@@ -86,7 +90,7 @@
             <div class="galeria-card card-largo" data-category="complexo-aquatico">
                 <img src="../images/piscina.jpeg" alt="Diversão Refrescante" class="card-img">
                 <div class="card-overlay">
-                    <span class="tag-categoria tag-aquatico">Area molhada</span>
+                    <span class="tag-categoria tag-aquatico">Área molhada</span>
                     <h3>Diversão Refrescante</h3>
                 </div>
             </div>
@@ -105,10 +109,10 @@
         <!-- ================= BANNER DE RESERVA (CTA) ================= -->
         <section class="cta-reserva">
             <div class="cta-conteudo">
-                <h2>Venha viver essa experiência!</h2>
-                <p>Nossa estrutura está pronta para receber seu grupo. Faça sua reserva para a próxima temporada de acampamentos.</p>
+                <h2>Venha viver essa experiência conosco!!</h2>
+                <p>Nossa estrutura está pronta para receber seu grupo. Faça sua inscrição para a próxima temporada do acampamento.</p>
             </div>
-            <button class="btn-reservar">RESERVAR AGORA</button>
+            <button class="btn-reservar">Realizar a inscrição</button>
         </section>
     </main>
             <div id="preview-modal" class="modal-preview">
@@ -138,76 +142,39 @@
         </div>
     </footer>
 
-    <!-- ================= SCRIPT PARA FILTRAR FOTOS DINAMICAMENTE ================= -->
-<script>
-    // ================= 1. SISTEMA DE FILTROS DA GALERIA =================
-    // Declaramos as variáveis uma única vez aqui no topo!
-    const botoesFiltro = document.querySelectorAll('.btn-filtro');
-    const cardsGaleria = document.querySelectorAll('.galeria-card');
-
-    botoesFiltro.forEach(botao => {
-        botao.addEventListener('click', () => {
-            botoesFiltro.forEach(b => b.classList.remove('active'));
-            botao.classList.add('active');
-
-            const categoriaSelecionada = botao.getAttribute('data-filter');
-
-            cardsGaleria.forEach(card => {
-                const categoriaCard = card.getAttribute('data-category');
-
-                if (categoriaSelecionada === 'todos' || categoriaCard === categoriaSelecionada) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // ================= 2. JAVASCRIPT DO PREVIEW DA IMAGEM =================
-    const modal = document.getElementById('preview-modal');
-    const imgModal = document.getElementById('img-preview');
-    const modalWrapper = document.getElementById('modal-wrapper');
-    const botaoFechar = document.getElementById('modal-close-btn');
+<nav class="mobile-bottom-nav">
+    <!-- Links fixos principais -->
+    <a href="../index.html" class="nav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Início</span>
+    </a>
     
-    // REMOVIDO: "const cardsGaleria = ..." daqui para não dar erro de redeclaração!
+    <a href="galeria.html" class="nav-item active">
+        <span class="material-symbols-outlined">photo_library</span>
+        <span class="nav-label">Galeria</span>
+    </a>
+    
+    <a href="temporadas.html" class="nav-item">
+        <span class="material-symbols-outlined">event</span>
+        <span class="nav-label">Temporadas</span>
+    </a>
+    
+    <!-- ITEM COM SUBMENU (Agora com Sobre, Quem Somos e Contato) -->
+    <div class="nav-item-has-menu">
+        <a href="#" class="nav-item" id="btnQuemSomos">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="nav-label">Info</span> <!-- Mudei o label para "Info" ou "Mais" para caber melhor -->
+        </a>
+        
+        <!-- Balão que aparece em cima -->
+        <div class="nav-submenu" id="submenuQuemSomos">
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="contato.html">Contato</a> <!-- Novo link aqui dentro -->
+        </div>
+    </div>
+</nav>
 
-    // Abre o modal ao clicar em qualquer card da galeria
-    cardsGaleria.forEach(card => {
-        card.addEventListener('click', () => {
-            const img = card.querySelector('.card-img');
-            if (img) {
-                modal.style.display = "block";
-                imgModal.src = img.src; // Pega a URL original da imagem
-                document.body.style.overflow = "hidden"; // Trava o scroll do fundo
-            }
-        });
-    });
-
-    // Função para fechar o Modal e liberar o site
-    function fecharModal() {
-        modal.style.display = "none";
-        imgModal.src = ""; // Limpa o src para liberar memória do navegador
-        document.body.style.overflow = "auto"; // Libera o scroll
-    }
-
-    // Fecha ao clicar no X
-    botaoFechar.addEventListener('click', fecharModal);
-
-    // Fecha ao clicar fora da imagem (na área escura)
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target === modalWrapper) {
-            fecharModal();
-        }
-    });
-
-    // Permite fechar pressionando a tecla ESC no teclado
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            fecharModal();
-        }
-    });
-</script>
+<script src="../js/script.js"></script>
 </body>
 </html>
